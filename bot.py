@@ -12,7 +12,7 @@ def random_hex_string(length=6):
 
 run_id = random.choice(range(1,100000))     # used to identify a particular run in the log file. 
 
-max_loop = 2
+max_loop = 1
 
 for run in range(max_loop):      
     try:
@@ -30,9 +30,10 @@ for run in range(max_loop):
 
         commit_txt = random_hex_string()
 
-        subprocess.Popen("git add .", shell=True)    # opens a new Chrome window
-        subprocess.Popen(f"git commit -m {commit_txt}", shell=True)    # opens a new Chrome window
-        subprocess.Popen("git push -u origin main", shell=True)    # opens a new Chrome window
+        time.sleep(2)
+        subprocess.Popen("git add .", shell=True)
+        subprocess.Popen(f"git commit -m 'hello'", shell=True)
+        subprocess.Popen("git push -u origin main", shell=True)
 
         time.sleep(3)
 
@@ -44,7 +45,7 @@ for run in range(max_loop):
 
 
     except KeyboardInterrupt:       # press CTRL-C to exit while the bot is running
-        print(f"[!] GH bot exited at run: {run}")
+        print(f"[!] GH commit bot exited at run: {run}")
         break
 
 
