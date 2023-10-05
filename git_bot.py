@@ -35,7 +35,7 @@ for run in range(max_loop):
         start_now = datetime.now()
         start_timestamp_str = f'{start_now:%H.%M.%S_%m.%d.%Y}'
         current_date = f'{start_now:%m.%d.%Y}'
-        print(f"[***] Starting new GH commit bot run at run:{run}, max_loop:{max_loop}, run_id:{run_id} commit:{COMMIT_MESSAGE} [{start_timestamp_str}]")
+        print(f"[***] Starting new GH commit bot: commit:{COMMIT_MESSAGE}, run:{run}, max_loop:{max_loop}, run_id:{run_id}  [{start_timestamp_str}]")
 
 
         # with open(f"{local_dir}/{update_file}", "a") as f:
