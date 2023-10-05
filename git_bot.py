@@ -51,12 +51,15 @@ for run in range(max_loop):
         time.sleep(1)
 
         git_add_commit_push()
-        # file = open(f"output\\commits.txt", 'a')
-        # file.write(f"{COMMIT_MESSAGE}\n")
-        # file.close()
+
+        
+        # log = open(f"log_files\GITHUB_BOT_{current_date}_{run_id}.txt", 'a')
+        # log.write(f"[run:{run}] [new profile view count:{count}] [Start:{start_timestamp_str}] [max_loop:{max_loop}] [run_id:{run_id}]\n\n")
+        # log.close()
 
         time.sleep(2)
     
     except KeyboardInterrupt:       # press CTRL-C to exit while the bot is running
         print(f"[!] GH commit bot exited at run: {run}")
         break
+
