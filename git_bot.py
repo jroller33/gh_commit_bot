@@ -7,28 +7,24 @@ from datetime import datetime
 def random_hex_string(length=6):
     return str(urandom(length).hex())
 
-
-PATH_OF_GIT_REPO = r'J:\GH Repos\gh_commit_bot\.git'  # make sure .git folder is properly configured
-
 def git_add_commit_push():
     try:
         repo = Repo(PATH_OF_GIT_REPO)
         repo.git.add(all=True)
-        print("added")
+        print("[*] git add .")
         repo.index.commit(COMMIT_MESSAGE)
-        print(f"commit {COMMIT_MESSAGE}")
+        print(f"[*] git commit -m {COMMIT_MESSAGE}")
         origin = repo.remote(name='origin')
         origin.push()
-        print(f"pushed")
+        print(f"[*] git push -u origin main")
     except:
-        print('Some error occured while pushing the code')    
+        print('[!] Error in git_add_commit_push()')    
 
-# git_push()
-
+PATH_OF_GIT_REPO = r'J:\GH Repos\gh_commit_bot\.git'  # make sure .git folder is properly configured
 
 run_id = random.choice(range(1,100000))     # used to identify a particular run in the log file. 
 
-max_loop = 5
+max_loop = 20
 
 for run in range(max_loop):      
     try:
@@ -51,6 +47,9 @@ for run in range(max_loop):
         time.sleep(1)
 
         git_add_commit_push()
+
+        with open(f"log_files\GITHUB_BOT_{current_date}_{run_id}.txt", 'a') as f:
+            f.write(f"[COMMIT:{COMMIT_MESSAGE}] [run:{run}] [Start:{start_timestamp_str}] [max_loop:{max_loop}] [run_id:{run_id}]\n\n")
 
         
         # log = open(f"log_files\GITHUB_BOT_{current_date}_{run_id}.txt", 'a')
