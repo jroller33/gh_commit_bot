@@ -24,7 +24,7 @@ PATH_OF_GIT_REPO = r'J:\GH Repos\gh_commit_bot\.git'  # make sure .git folder is
 
 run_id = random.choice(range(1,100000))     # used to identify a particular run in the log file. 
 
-max_loop = 20
+max_loop = 100
 
 for run in range(max_loop):      
     try:
@@ -56,7 +56,7 @@ for run in range(max_loop):
         # log.write(f"[run:{run}] [new profile view count:{count}] [Start:{start_timestamp_str}] [max_loop:{max_loop}] [run_id:{run_id}]\n\n")
         # log.close()
 
-        time.sleep(2)
+        time.sleep(3)
     
     except KeyboardInterrupt:       # press CTRL-C to exit while the bot is running
         print(f"[!] GH commit bot exited at run: {run}")
