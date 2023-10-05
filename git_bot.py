@@ -16,9 +16,9 @@ def git_add_commit_push():
         print(f"[*] git commit -m {COMMIT_MESSAGE}")
         origin = repo.remote(name='origin')
         origin.push()
-        print(f"[*] git push -u origin main")
+        print(f"[*] git push -u origin main\n\n")
     except:
-        print('[!] Error in git_add_commit_push()')    
+        print('[!] Error in git_add_commit_push()\n\n')    
 
 PATH_OF_GIT_REPO = r'J:\GH Repos\gh_commit_bot\.git'  # make sure .git folder is properly configured
 
