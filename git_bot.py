@@ -14,11 +14,12 @@ def random_hex_string(length=6):
 def git_add_commit_push():
     try:
         repo = Repo(PATH_OF_GIT_REPO)
+        origin = repo.remote(name='origin')
+        
         repo.git.add(all=True)
         print("[*] git add .")
         repo.index.commit(COMMIT_MESSAGE)
         print(f"[*] git commit -m {COMMIT_MESSAGE}")
-        origin = repo.remote(name='origin')
         origin.push()
         print(f"[*] git push -u origin main\n")
     except:
