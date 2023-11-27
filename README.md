@@ -12,6 +12,9 @@ That's the beauty of learning a skill like automation scripting: you don't have 
 
 ## Usage
 
+Install the required packages from 'requirements.txt', then run 'git_bot.py'.
+Note that you will need to change certain fields in 'git_bot.py' to match your GitHub account, and you will need to make sure that the '.git' folder you're using on your local machine is properly configured, otherwise this script will not work correctly.
+
 ## Contribution
 You can contribute by forking this [repo](https://github.com/jroller33/gh_commit_bot) and submitting a pull request.
 
