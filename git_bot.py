@@ -27,7 +27,7 @@ def git_add_commit_push(COMMIT_MESSAGE):
 
 PATH_OF_GIT_REPO = r'J:\GH Repos\gh_commit_bot\.git'  # make sure .git folder is properly configured
 
-run_id = random_hex_string     # used to identify a particular run in the log file. 
+run_id = random_hex_string()     # used to identify a particular run in the log file. 
 
 current_commits_url = "https://camo.githubusercontent.com/372ebfb40b1316d44bf6914d6134178c9ec06d92dd1265788a21c4074ec158c7/68747470733a2f2f6769746875622d726561646d652d73747265616b2d73746174732e6865726f6b756170702e636f6d2f3f757365723d6a726f6c6c6572333326"
 
@@ -47,8 +47,8 @@ for run in range(max_loop):
         current_date = f'{start_now:%m.%d.%Y}'
         print(f"[***] Starting new GH commit bot: run:{run}, max_loop:{max_loop}, run_id:{run_id}  [{start_timestamp_str}]")
 
-        with open(f"log_files\GITHUB_BOT_{current_date}.txt", 'a') as f:
-            f.write(f"COMMIT_MESSAGE: [run_id:{run_id}] [Ran {run} times] [Start:{start_timestamp_str}] [max_loop:{max_loop}]\n\n")
+        with open(f"log_files\GITHUB_BOT_{run_id}_{current_date}.txt", 'a') as f:
+            f.write(f"COMMIT_MESSAGE:{COMMIT_MESSAGE} [run_id:{run_id}] [Ran {run} times] [Start:{start_timestamp_str}] [max_loop:{max_loop}]\n\n")
 
         time.sleep(1)
 
