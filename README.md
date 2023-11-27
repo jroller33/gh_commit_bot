@@ -4,7 +4,7 @@
 
 ## Description
 
-
+This is a simple Python CLI bot that creates a loop, then automatically creates a log file and writes to it, adds and commits the changes, and finally pushes the commit to a remote GitHub repository. 
 
 ## Usage
 
