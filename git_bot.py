@@ -25,15 +25,21 @@ def git_add_commit_push(COMMIT_MESSAGE):
     except:
         print('[!] Error in git_add_commit_push()\n\n')    
 
-PATH_OF_GIT_REPO = r'J:\GH Repos\gh_commit_bot\.git'  # make sure .git folder is properly configured
+
+# CHANGE 'PATH_OF_GIT_REPO' TO THE PATH OF YOUR GIT REPO, and make sure .git folder is properly configured
+PATH_OF_GIT_REPO = r'J:\GH Repos\gh_commit_bot\.git'  
 
 run_id = random_hex_string()     # used to identify a particular run in the log file. 
 
+
+# CHANGE THIS URL TO YOUR OWN GITHUB ACCOUNT
 current_commits_url = "https://camo.githubusercontent.com/372ebfb40b1316d44bf6914d6134178c9ec06d92dd1265788a21c4074ec158c7/68747470733a2f2f6769746875622d726561646d652d73747265616b2d73746174732e6865726f6b756170702e636f6d2f3f757365723d6a726f6c6c6572333326"
 
+# this sends a request to get the current number of commits, then parses the response to extract the data
 response = requests.get(current_commits_url)
 current_commits = response.text.splitlines()[35].strip()
 
+# max_loop specifies how many commits you want to make
 max_loop = int(input(f"\nCurrent github commits: {current_commits}.\nHow many times do you want to run the GH commit bot? "))
 
 
