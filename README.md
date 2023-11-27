@@ -1,4 +1,4 @@
-# Python Commit Bot for GitHub
+# GitHub Commit Bot
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
